@@ -1,0 +1,7 @@
+# Install torch CPU first (smaller download):
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+# then:  pip install -r requirements-ai.txt
+torch>=2.2
+transformers>=4.40
+sentence-transformers>=3.0
+chromadb>=0.5

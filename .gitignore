@@ -1,0 +1,24 @@
+﻿# ---------- Python backend ----------
+backend/venv/
+backend/.env
+backend/*.db
+backend/rag_store/
+__pycache__/
+*.pyc
+# ---------- Flutter frontend ----------
+cryptosense_ai/build/
+cryptosense_ai/.dart_tool/
+cryptosense_ai/.flutter-plugins
+cryptosense_ai/.flutter-plugins-dependencies
+cryptosense_ai/.idea/
+cryptosense_ai/*.iml
+cryptosense_ai/lib_old/
+# ---------- Editors / OS ----------
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+backend/venv/
+backend/.env
+backend/*.db
+__pycache__/

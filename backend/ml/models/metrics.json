@@ -1,0 +1,146 @@
+{
+  "trained_at": "2026-09-29T07:50:06.665221+00:00",
+  "data": "binance",
+  "symbols": [
+    "BTCUSDT",
+    "ETHUSDT",
+    "BNBUSDT",
+    "SOLUSDT",
+    "XRPUSDT",
+    "ADAUSDT"
+  ],
+  "days": 730,
+  "interval": "1h",
+  "horizon_hours": 24,
+  "threshold_pct": 1.5,
+  "features": [
+    "ret_1",
+    "ret_4",
+    "ret_24",
+    "rsi_14",
+    "macd_hist",
+    "macd_cross",
+    "bb_pos",
+    "bb_width",
+    "atr_pct",
+    "sma20_dist",
+    "sma50_dist",
+    "vol_ratio",
+    "taker_ratio",
+    "funding_rate",
+    "fng",
+    "fng_change_7d",
+    "btc_ret_24",
+    "btc_sma50_dist"
+  ],
+  "split": "chronological 70/15/15 per coin with gaps",
+  "rows": {
+    "train": 72984,
+    "validation": 15414,
+    "test": 15708
+  },
+  "class_balance_train": {
+    "bearish": 21129,
+    "neutral": 31350,
+    "bullish": 20505
+  },
+  "ensemble_weights": {
+    "xgb": 0.3973,
+    "lgbm": 0.4207
+  },
+  "results": {
+    "xgb": {
+      "accuracy": 0.5064,
+      "macro_f1": 0.3798,
+      "confident_accuracy": 0.6543,
+      "confident_coverage": 0.1751,
+      "confusion_matrix": [
+        [
+          836,
+          1834,
+          780
+        ],
+        [
+          1107,
+          6547,
+          812
+        ],
+        [
+          1142,
+          2079,
+          571
+        ]
+      ]
+    },
+    "lgbm": {
+      "accuracy": 0.5081,
+      "macro_f1": 0.403,
+      "confident_accuracy": 0.6686,
+      "confident_coverage": 0.1231,
+      "confusion_matrix": [
+        [
+          1044,
+          1649,
+          757
+        ],
+        [
+          1232,
+          6241,
+          993
+        ],
+        [
+          1126,
+          1970,
+          696
+        ]
+      ]
+    },
+    "ensemble": {
+      "accuracy": 0.5075,
+      "macro_f1": 0.3921,
+      "confident_accuracy": 0.6668,
+      "confident_coverage": 0.1492,
+      "confusion_matrix": [
+        [
+          935,
+          1748,
+          767
+        ],
+        [
+          1167,
+          6398,
+          901
+        ],
+        [
+          1108,
+          2045,
+          639
+        ]
+      ]
+    },
+    "baseline_majority": {
+      "accuracy": 0.539,
+      "macro_f1": 0.2335
+    }
+  },
+  "feature_importance_xgb": {
+    "atr_pct": 0.1891,
+    "fng_change_7d": 0.0758,
+    "btc_sma50_dist": 0.0674,
+    "sma50_dist": 0.0666,
+    "fng": 0.0666,
+    "bb_width": 0.0651,
+    "btc_ret_24": 0.0553,
+    "sma20_dist": 0.0541,
+    "macd_cross": 0.0473,
+    "vol_ratio": 0.0473,
+    "rsi_14": 0.0461,
+    "ret_24": 0.0457,
+    "ret_1": 0.0403,
+    "funding_rate": 0.0366,
+    "macd_hist": 0.0334,
+    "bb_pos": 0.0332,
+    "taker_ratio": 0.0164,
+    "ret_4": 0.0138
+  }
+}
